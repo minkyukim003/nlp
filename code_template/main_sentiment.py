@@ -13,7 +13,7 @@ import json
 import torch.optim as optim
 from torch.utils.data import DataLoader,Dataset,TensorDataset
 # import pandas as pd
-from DataLoader import MovieDataset
+from nlp.code_template.DataLoader_template import MovieDataset
 # from LSTM import LSTMModel
 from GloveEmbed import _get_embedding
 import time

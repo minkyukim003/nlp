@@ -1,29 +1,26 @@
-import torch
+import torch as t
 from torch.utils.data import Dataset
 import pandas as pd
-from ast import literal_eval
-
-
-'''Create data loader'''
-
+ 
+#This dataloader will take in a cleaned dataframe and turn it into tensors for PyTorch.
+#Keep note that text is not automtically quantified and will need to go through embedding.
 class MovieDataset(Dataset):
-    def __init__(self, filename):
-        self.df = pd.read_csv(filename, converters={'input_x': literal_eval})
-        # print(self.df['input_x'])
-
+    def __init__(self, csv_path):
+        self.df = pd.read_csv(csv_path)
     
     def __len__(self):
         return len(self.df)
     
+    #Get each element in a row 
+    #and convert to Torch readable tensors 
+    #*Except the string, which needs embedding. 
     def __getitem__(self, index):
-        ## load the input features and labels
-        ##-----------------------------------------------
-        ## complete the code to load features and labels
-        ##-----------------------------------------------
-        input_x = 
-        label = 
-        
+        #Map 'neg' and 'pos' to 0 and 1 here. 
+        label_map = {'neg':0, 'pos':1}
 
-        return torch.tensor(input_x), torch.tensor(label,dtype=torch.float)
-        
-        
+        row = self.df.iloc[index]
+        content = row['Content']
+        label = label_map[row['Label']]
+        seq_len = row['seq_len']
+
+        return content, t.tensor(label), t.tensor(seq_len)
