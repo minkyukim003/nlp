@@ -15,7 +15,7 @@ from torch.utils.data import DataLoader,Dataset,TensorDataset
 # import pandas as pd
 from nlp.code_template.DataLoader_template import MovieDataset
 # from LSTM import LSTMModel
-from GloveEmbed import _get_embedding
+from nlp.code_template.GloveEmbed_template import _get_embedding
 import time
 
 

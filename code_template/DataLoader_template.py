@@ -20,8 +20,8 @@ class MovieDataset(Dataset):
         ##-----------------------------------------------
         ## complete the code to load features and labels
         ##-----------------------------------------------
-        input_x = pd.read_csv("./data/training_raw_data.csv")
-        label = pd.read_csv("./data/training_raw_data.csv")
+        input_x =
+        label = 
         
 
         return torch.tensor(input_x), torch.tensor(label,dtype=torch.float)

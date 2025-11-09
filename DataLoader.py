@@ -13,14 +13,11 @@ class MovieDataset(Dataset):
     
     #Get each element in a row 
     #and convert to Torch readable tensors 
-    #*Except the string, which needs embedding. 
+    #Strings would have been tokenized here. 
     def __getitem__(self, index):
-        #Map 'neg' and 'pos' to 0 and 1 here. 
-        label_map = {'neg':0, 'pos':1}
 
         row = self.df.iloc[index]
-        content = row['Content']
-        label = label_map[row['Label']]
-        seq_len = row['seq_len']
+        content = 
+        label = row['Label']
 
-        return content, t.tensor(label), t.tensor(seq_len)
+        return t.tensor(content), t.tensor(label)
