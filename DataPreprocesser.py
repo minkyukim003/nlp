@@ -64,7 +64,7 @@ def _token_index(df, sig_range):
         start_key += 1
 
     with open('./data/token_idx.json', 'w') as f:
-        json.dump(token_idx, f)
+        json.dump(token_idx, f, indent = 4)
 
     return token_idx
 
@@ -111,4 +111,5 @@ def preprocess(df, train : bool):
     seq_len = 150
     df = _pad_trunc_df(df, seq_len)
 
+    #print(df)
     return df
