@@ -1,0 +1,27 @@
+Using ./glove.6B/glove.6B.100d.txt.
+
+Run line 36. Both training and test files exist.
+
+Preprocess finished.
+
+Training data loaded.
+
+Test data loaded.
+
+Created embedding matrix.
+
+GPU/CPU has been set.
+cuda:0 is being used.
+
+Loaded the model.
+Optimizer and loss function has been set.
+
+Beginning training...
+Beginning testing...
+
+Accuracy: 0.8396
+Precision: 0.8449
+Recall: 0.8389
+F1 Score: 0.8388
+Runtime: 58.7409405708313s.
+Current date and time is 2025-11-11 18:50:41.830874

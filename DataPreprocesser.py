@@ -86,20 +86,18 @@ def _pad_trunc_df(df, seq_len):
     return df
 
 #Run functions. Use pandas dataframe as input. Return the clean dataframe. 
-def preprocess(df, train : bool):
+def preprocess(df, train : bool, set_len, token_idx_lim, min_len, max_len):
     df = _remove_punc(df)
     df = _lowercase(df)
 
     #TODO Implement _compute_seq_len(). 
     df = _compute_seq_len(df)
-    max_len = 600
-    min_len = 100
     df = _remove_short(df, min_len)
     df = _remove_long(df, max_len)
 
     df = _convert_labels(df)
 
-    sig_range = 8000
+    sig_range = token_idx_lim
     if train == True:
         token_idx = _token_index(df, sig_range)
     else:
@@ -108,7 +106,7 @@ def preprocess(df, train : bool):
 
     df = _encoding(df, token_idx)
 
-    seq_len = 150
+    seq_len = set_len
     df = _pad_trunc_df(df, seq_len)
 
     #print(df)

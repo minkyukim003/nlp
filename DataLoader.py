@@ -8,7 +8,7 @@ from ast import literal_eval
 #Keep note that text is not automtically quantified and will need to go through embedding.
 class MovieDataset(Dataset):
     def __init__(self, csv_path):
-        self.df = pd.read_csv(csv_path, converters={'Label': literal_eval})
+        self.df = pd.read_csv(csv_path, converters={'Input': literal_eval})
     
     def __len__(self):
         return len(self.df)

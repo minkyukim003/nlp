@@ -1,0 +1,25 @@
+Using ./glove.6B/glove.6B.100d.txt.
+
+Run line 36. Both training and test files exist.
+
+Preprocess finished.
+
+Training data loaded.
+
+Test data loaded.
+
+Created embedding matrix.
+
+GPU/CPU has been set.
+cuda:0 is being used.
+
+Loaded the model.
+Optimizer and loss function has been set.
+
+Beginning training...
+Traceback (most recent call last):
+  File "main.py", line 209, in <module>
+    main()
+  File "main.py", line 176, in main
+    labels.extend(batch_labels.cpu().numpy())
+UnboundLocalError: local variable 'labels' referenced before assignment
